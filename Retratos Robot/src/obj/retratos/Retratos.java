@@ -85,5 +85,4 @@ public class Retratos {
 	System.out.println(" \\_____/");
 		
 	}
-	
 }
