@@ -1,60 +1,40 @@
 import java.util.Scanner;
 
-import obj.retratos.Retratos;
+import org.jplb.retratosrobot.Retrato;
 
 public class RetratosRobot {
-	
-	Scanner teclado = new Scanner(System.in);
-	
-	private int ojos;
-	private int pelo;
-	private int nariz;
-	private int boca;
-	
-	public void pregunta(){
+
+	public static void main(String[] args) throws Exception {
+		int opcionPelo;
+		int opcionOjos;
+		int opcionNariz;
+		int opcionBoca;
+		int opcionBarbilla;
 		
-		System.out.println("Dime un tipo de Pelo 1-4");
+		Scanner in = new Scanner(System.in);
 		
-		ojos = teclado.nextInt();
+		System.out.println("Elige una opción para el pelo:");
+		Retrato.mostrarOpcionesRasgo(0);
+		opcionPelo = in.nextInt();
 		
-		System.out.println("Dime un tipo de Ojos 1-4");
+		System.out.println("Elige una opción para los ojos:");
+		Retrato.mostrarOpcionesRasgo(1);
+		opcionOjos = in.nextInt();
 		
-		pelo = teclado.nextInt();
+		System.out.println("Elige una opción para la nariz:");
+		Retrato.mostrarOpcionesRasgo(2);
+		opcionNariz = in.nextInt();
 		
-		System.out.println("Dime un tipo de nariz 1-4");
+		System.out.println("Elige una opción para la boca:");
+		Retrato.mostrarOpcionesRasgo(3);
+		opcionBoca = in.nextInt();
 		
-		nariz = teclado.nextInt();
+		System.out.println("Elige una opción para la barbilla:");
+		Retrato.mostrarOpcionesRasgo(4);
+		opcionBarbilla = in.nextInt();
 		
-		System.out.println("Dime un tipo de boca 1-4");
-	
-		boca = teclado.nextInt();
+		Retrato r = new Retrato(opcionPelo, opcionOjos, opcionNariz, opcionBoca, opcionBarbilla);
+		System.out.print(r);
 	}
-
-	public static void main(String[] args) {
-		
-		RetratosRobot respuesta = new RetratosRobot();
-		
-		respuesta.pregunta();
-		 
-		 
-		 
-		 Retratos retrato;
-		 
-		 Retratos cara = new Retratos();
-		 
-		 cara.imprimir(respuesta.ojos, respuesta.pelo, respuesta.nariz, respuesta.boca);
-		
-		
-	
-	}
-
-
-
-
-
-
-	
-
-	
 
 }
